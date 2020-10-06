@@ -1,13 +1,11 @@
-
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
+    {% load static %}
+	<header>
+		   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.6">
-    <title>{{blog.title}}</title>
+    <title>Alex Muia</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
 
@@ -22,29 +20,6 @@
 <link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
 <meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
 <meta name="theme-color" content="#563d7c">
-
-
-    <style>
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
-    </style>
-    <!-- Custom styles for this template -->
-    
-  </head>
-  <body>
-    <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <a class="navbar-brand" href="{% url 'home' %}">Alex Muia</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,36 +29,42 @@
               <div class="navbar-nav ml-auto">
                 <a class="nav-item nav-link active" href="https://twitter.com/alex_muia" target="_blank">Twitter</a>
                 <a class="nav-item nav-link active" href="https://github.com/AlexMuia31" target="_blank">GitHub</a>
-                <a class="nav-item nav-link active" href="https://www.facebook.com/aleki.freeky"target="_blank" >Facebook</a>
-                <a class="nav-item nav-link active" href="#">Resume</a>
-                <a class="nav-item nav-link active" href="#">Blog</a>
+                <a class="nav-item nav-link active" href="https://www.facebook.com/aleki.freeky" target="_blank">Facebook</a>
+                <a class="nav-item nav-link active" href="{% static 'CV.odt' %}">Resume</a>
+                <a class="nav-item nav-link active" href="blog/">Blog</a>
                 
               </div>
             </div>
           </nav>
 </header>
 
-<main role="main">
-<div class="container">
+		<section class="content">
+			<div class="page_header">
+				<h1>{{object.Title}}</h1>
+			</div>
+			<div class="center">
+				<div class=" single editor_text">
+			
 
-<h1 class="text-center pt-3">{{ blog.title | safe}}</h1>
-<p>{{blog.pub_date}}</p>
-<img class="img-fluid" src="{{blog.image.url}}" height="600" width="600">   
+					<img src="{{object.Picture.url}}"  width="400" height="250">
+					<div class="post_data">
+						<span class="author"><i class="fas fa-user"></i>by {{object.author}}</span>
+				
+					</div>
 
+					<p>{{object.Body | safe}}</p>
 
+					
 
-<br>
-<p>{{blog.body | safe}}</p>
+				</div>
+			</div>
 
-</div>
-
-</main>
-
+		
+        </section>
 <footer class="text-muted">
   <div class="container">
    <p>CopyRight Alex Muia {% now "Y" %}</p>
 </footer>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-</html> 
+
+		
+

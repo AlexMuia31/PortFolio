@@ -1,0 +1,95 @@
+    {% load static %}
+	<header>
+	   <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v3.8.6">
+    <title>Alex Muia</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.4/examples/album/">
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/4.4/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/4.4/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/4.4/assets/img/favicons/safari-pinned-tab.svg" color="#563d7c">
+<link rel="icon" href="/docs/4.4/assets/img/favicons/favicon.ico">
+<meta name="msapplication-config" content="/docs/4.4/assets/img/favicons/browserconfig.xml">
+<meta name="theme-color" content="#563d7c">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{% url 'home' %}">Alex Muia</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div class="navbar-nav ml-auto">
+                <a class="nav-item nav-link active" href="https://twitter.com/alex_muia" target="_blank">Twitter</a>
+                <a class="nav-item nav-link active" href="https://github.com/AlexMuia31" target="_blank">GitHub</a>
+                <a class="nav-item nav-link active" href="https://www.facebook.com/aleki.freeky" target="_blank">Facebook</a>
+                <a class="nav-item nav-link active" href="{% static 'CV.odt' %}">Resume</a>
+                <a class="nav-item nav-link active" href="blog/">Blog</a>
+                
+              </div>
+            </div>
+          </nav>
+</header>
+
+
+		<section class="content">
+			<div class="page_header">
+				
+			</div>
+			<div class="center">
+				
+				<div class="blog">
+					
+					<article class="single_post">
+						{% for object in object_list %}
+						<a href="{% url 'detail' object.id %}"><img src="{{object.Picture.url}}" width="400" height="250"></a>
+						<a href="{% url 'detail' object.id %}"><h1>{{object.Title}}</h1></a>
+						<div class="post_data">
+							<span class="author"><i class="fas fa-user"></i>{{object.author}}</span>
+							<span class="author">{{object.pub_date}}</span>
+							
+						</div>
+						
+						<p>{{object.summary | safe}}...<a href="{% url 'detail' object.id %}"  style="color:blue"</a>read more</p>
+						{% empty %} 
+						<li>Sorry,no Posts yet.</li> 
+
+						{% endfor %}
+					</article>
+			{% if is_paginated %}
+				<nav aria-label="Page navigation conatiner"></nav>
+				<ul class="pagination justify-content-center">
+					{% if page_obj.has_previous %}
+					<li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+					{% endif %}
+					{% if page_obj.has_next %}
+					<li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+
+					{% endif %}
+				</ul>
+				</nav>
+				</div>
+			{% endif %}
+				
+
+
+				</div>
+			
+
+			
+			</div>
+			</div>
+		</section>
+<footer class="text-muted">
+  <div class="container">
+   <p>CopyRight Alex Muia {% now "Y" %}</p>
+</footer>
+
+	

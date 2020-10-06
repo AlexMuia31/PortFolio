@@ -1,10 +1,16 @@
-from django.shortcuts import render, get_object_or_404
-from .models import Blog
+from django.views.generic import ListView ,DetailView
+from . models import Blog
 
-def allblogs(request):
-    blogs = Blog.objects
-    return render (request, 'allblogs.html',{'blogs':blogs})
+# Create your views here.
+class BlogView(ListView):
+    
+    queryset = Blog.objects.order_by('-pub_date')
+    template_name='blog/blog.html'
+    paginate_by = 5
 
-def detail(request, blog_id):
-    detailblog = get_object_or_404(Blog, pk=blog_id)
-    return render(request, 'detail.html',{'blog':detailblog})
+
+
+class BlogDetail(DetailView):
+    model= Blog
+    template_name='blog/blog_detail.html'  
+

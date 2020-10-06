@@ -1,8 +1,10 @@
 from django.shortcuts import render
 
+from django.views.generic import ListView ,DetailView
+
 from .models import Job
 
-def home(request):
-    jobs = Job.objects
-    return render(request,'jobs/home.html',{'jobs':jobs})
+class home(ListView):
+    queryset = Job.objects.all()
+    template_name='jobs/home.html'
 

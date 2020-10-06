@@ -57,7 +57,7 @@
                 <a class="nav-item nav-link active" href="https://github.com/AlexMuia31" target="_blank">GitHub</a>
                 <a class="nav-item nav-link active" href="https://www.facebook.com/aleki.freeky" target="_blank">Facebook</a>
                 <a class="nav-item nav-link active" href="{% static 'CV.odt' %}">Resume</a>
-                <a class="nav-item nav-link active" href="{%url 'allblogs' %}">Blog</a>
+                <a class="nav-item nav-link active" href="blog/">Blog</a>
                 
               </div>
             </div>
@@ -83,12 +83,12 @@
     <div class="container">
 
       <div class="row">
-          {% for job in jobs.all %}
+          {% for object in object_list %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{job.image.url}}" />
+            <img class="card-img-top" src="{{object.image.url}}" />
             <div class="card-body">
-              <xt class="card-text">{{ job.summary }}</p>
+              <xt class="card-text">{{ object.summary }}</p>
                 
               </div>
             </div>

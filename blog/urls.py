@@ -1,10 +1,9 @@
-
 from django.urls import path
-from . import views
+from . views import  BlogView, BlogDetail
+from . models import Blog
 
+urlpatterns= [
+    path('', BlogView.as_view(), name='blogs'),
+    path('<pk>/',BlogDetail.as_view(), name='detail')
 
-urlpatterns = [
-    
-    path('', views.allblogs, name='allblogs'),
-    path('<int:blog_id>/', views.detail, name= 'detail'),
-]    
+]
