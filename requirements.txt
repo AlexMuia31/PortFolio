@@ -1,4 +1,6 @@
 Django==2.2.16
+django-ckeditor==6.0.0
+django-js-asset==1.2.2
 gunicorn==20.0.4
 Pillow==7.2.0
 psycopg2-binary==2.8.6
