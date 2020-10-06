@@ -9,6 +9,7 @@ class Blog(models.Model):
     pub_date=models.DateTimeField()
     author=models.CharField(max_length=100)
     
+    
 
 
     class Meta:
