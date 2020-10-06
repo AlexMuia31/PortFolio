@@ -25,7 +25,7 @@ SECRET_KEY = '%cww_$z!jba8-rum_4c+of3e9*yob_q8vol@g2v9g5_a*1=jzt'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['alekiportfolio.herokuapp.com']
+ALLOWED_HOSTS = ['alekiportfolio.herokuapp.com','127.0.0.1']
 
 
 # Application definition
@@ -79,15 +79,10 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'portfoliodb',
-        'USER': 'postgres',
-        'PASSWORD': 'Vipialeki1',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
