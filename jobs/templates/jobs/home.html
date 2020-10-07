@@ -85,6 +85,7 @@
       <div class="row">
     
           {% for object in object_list %}
+          {% if object %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
             <img class="card-img-top" src="{{object.image.url}}" />
@@ -94,8 +95,8 @@
               </div>
             </div>
           </div>
-          	{% empty %} 
-						<li>Sorry,no jobs yet.</li> 
+         
+            {%endif%}
           {% endfor %}
      
         </div>         

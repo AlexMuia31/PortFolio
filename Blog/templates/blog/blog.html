@@ -49,6 +49,7 @@
 					<article class="single_post">
 					
 						{% for object in object_list %}
+						 {% if object %}
 						<a href="{% url 'detail' object.id %}"><img src="{{object.Picture.url}}" width="400" height="250"></a>
 						<a href="{% url 'detail' object.id %}"><h1>{{object.Title}}</h1></a>
 						<div class="post_data">
@@ -58,9 +59,8 @@
 						</div>
 						
 						<p>{{object.summary | safe}}...<a href="{% url 'detail' object.id %}"  style="color:blue"</a>read more</p>
-						{% empty %} 
-						<li>Sorry,no Posts yet.</li> 
-
+						
+						{%endif%}
 						{% endfor %}
 				
 					</article>
