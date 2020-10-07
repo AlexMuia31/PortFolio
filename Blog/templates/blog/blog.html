@@ -47,9 +47,9 @@
 				<div class="blog">
 					
 					<article class="single_post">
-					
+					 {% if object %}
 						{% for object in object_list %}
-						 {% if object %}
+						
 						<a href="{% url 'detail' object.id %}"><img src="{{object.Picture.url}}" width="400" height="250"></a>
 						<a href="{% url 'detail' object.id %}"><h1>{{object.Title}}</h1></a>
 						<div class="post_data">
@@ -60,9 +60,9 @@
 						
 						<p>{{object.summary | safe}}...<a href="{% url 'detail' object.id %}"  style="color:blue"</a>read more</p>
 						
-						{%endif%}
+					
 						{% endfor %}
-				
+					{%endif%}
 					</article>
 			{% if is_paginated %}
 				<nav aria-label="Page navigation conatiner"></nav>
