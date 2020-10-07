@@ -83,7 +83,7 @@
     <div class="container">
 
       <div class="row">
-      {% if object %}
+    
           {% for object in object_list %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
@@ -94,8 +94,10 @@
               </div>
             </div>
           </div>
+          	{% empty %} 
+						<li>Sorry,no jobs yet.</li> 
           {% endfor %}
-          {% endif %}
+     
         </div>         
       </div>
     </div>

@@ -1,6 +1,6 @@
     {% load static %}
 	<header>
-	   <meta charset="utf-8">
+		   <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
@@ -31,13 +31,12 @@
                 <a class="nav-item nav-link active" href="https://github.com/AlexMuia31" target="_blank">GitHub</a>
                 <a class="nav-item nav-link active" href="https://www.facebook.com/aleki.freeky" target="_blank">Facebook</a>
                 <a class="nav-item nav-link active" href="{% static 'CV.odt' %}">Resume</a>
-                <a class="nav-item nav-link active" href="Blog/">Blog</a>
+                <a class="nav-item nav-link active" href="/Blog">Blog</a>
                 
               </div>
             </div>
           </nav>
 </header>
-
 
 		<section class="content">
 			<div class="page_header">
@@ -48,7 +47,7 @@
 				<div class="blog">
 					
 					<article class="single_post">
-					{% if object %}
+					
 						{% for object in object_list %}
 						<a href="{% url 'detail' object.id %}"><img src="{{object.Picture.url}}" width="400" height="250"></a>
 						<a href="{% url 'detail' object.id %}"><h1>{{object.Title}}</h1></a>
@@ -63,7 +62,7 @@
 						<li>Sorry,no Posts yet.</li> 
 
 						{% endfor %}
-						{% endif %}
+				
 					</article>
 			{% if is_paginated %}
 				<nav aria-label="Page navigation conatiner"></nav>
