@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'portfoliodb',
         'USER': 'postgres',
         'PASSWORD': 'Vipialeki1',
-        'HOST': 'localhost',
+        'HOST': 'localhost','alekiportfolio.herokuapp.com'
         'PORT': '5432',
     }
 }
