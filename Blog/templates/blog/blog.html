@@ -47,7 +47,7 @@
 				<div class="blog">
 					
 					<article class="single_post">
-					 {% if object %}
+					 
 						{% for object in object_list %}
 						
 						<a href="{% url 'detail' object.id %}"><img src="{{object.Picture.url}}" width="400" height="250"></a>
@@ -62,7 +62,7 @@
 						
 					
 						{% endfor %}
-					{%endif%}
+					
 					</article>
 			{% if is_paginated %}
 				<nav aria-label="Page navigation conatiner"></nav>
